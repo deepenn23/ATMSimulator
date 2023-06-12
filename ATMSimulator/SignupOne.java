@@ -222,6 +222,7 @@ public class SignupOne extends JFrame implements ActionListener{
             {
                 JOptionPane.showMessageDialog(null, "Name is required!");
             } 
+            // main does not have the other input validations
             else
             {
                 Conn connection = new Conn();
