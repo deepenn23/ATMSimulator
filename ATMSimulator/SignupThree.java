@@ -217,9 +217,14 @@ public class SignupThree extends JFrame implements ActionListener{
             try {
 
                 // check for validation
-                if(accountType.equals(" "))
-                {
+                if(accountTypeBtnGroup.isSelected(null)){
                     JOptionPane.showMessageDialog(null, "Account Type must be specified!");
+                } 
+                else if(!chkbox1.isSelected() && !chkbox2.isSelected() && !chkbox3.isSelected() && !chkbox4.isSelected() && !chkbox5.isSelected() && !chkbox6.isSelected()){
+                    JOptionPane.showMessageDialog(null,"Must specify atleast one service");
+                }
+                else if(!chkbox7.isSelected()) {
+                    JOptionPane.showMessageDialog(null, "You must accept the declaration");
                 }
                 else { // if no error send the data to the database
                     Conn connection = new Conn();
@@ -245,5 +250,10 @@ public class SignupThree extends JFrame implements ActionListener{
 
         }
         
+    }
+
+    public static void main(String[] args) {
+        new SignupThree("").setVisible(true);
+
     }
 }

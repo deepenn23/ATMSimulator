@@ -10,7 +10,8 @@ import java.sql.SQLException;
 public class SignupTwo extends JFrame implements ActionListener{
 
     JLabel additonalDetails, ethnicityTxt, incomeTxt, educationTxt, occupationTxt, panNumTxt, ssNTxt, scitizenTxt, eAccountTxt;
-    JTextField ssN, panNum;
+    JTextField panNum;
+    JPasswordField ssN;
     JComboBox<String> ethnicity, income, education, occupation; 
     JRadioButton sYesButton, sNoButton, eYesButton, eNoButton;
     ButtonGroup sGroup, eGroup;
@@ -73,8 +74,8 @@ public class SignupTwo extends JFrame implements ActionListener{
         add(panNumTxt);
 
         panNum = new JTextField();
-        panNum.setBounds(300, 340, 350, 30);
-        panNum.setFont(new Font("Arial", Font.PLAIN, 20));
+        panNum.setBounds(300, 340, 300, 30);
+        panNum.setFont(new Font("Arial", Font.PLAIN, 16));
         add(panNum);
 
         ssNTxt = new JLabel("SSN: ");
@@ -82,9 +83,9 @@ public class SignupTwo extends JFrame implements ActionListener{
         ssNTxt.setFont(new Font("Arial", Font.BOLD,26));
         add(ssNTxt);
 
-        ssN = new JTextField();
+        ssN = new JPasswordField();
         ssN.setBounds(300, 390, 350, 30);
-        ssN.setFont(new Font("Arial", Font.PLAIN, 20));
+        ssN.setFont(new Font("Arial", Font.PLAIN, 16));
         add(ssN);
 
         scitizenTxt = new JLabel("Senior Citizen: ");
@@ -108,8 +109,8 @@ public class SignupTwo extends JFrame implements ActionListener{
 
 
         eAccountTxt = new JLabel("Existing Account: ");
-        eAccountTxt.setBounds(100, 490, 400,30);
-        eAccountTxt.setFont(new Font("Arial", Font.BOLD,23));
+        eAccountTxt.setBounds(100, 490, 250,30);
+        eAccountTxt.setFont(new Font("Arial", Font.BOLD,22));
         add(eAccountTxt);
 
         eYesButton = new JRadioButton("Yes");
@@ -176,10 +177,24 @@ public class SignupTwo extends JFrame implements ActionListener{
 
         // add to database
         try {
-            if(panNum.equals(""))
+            if(get_panNum.equals(""))
             {
-                JOptionPane.showMessageDialog(null, "Name is required!");
+                JOptionPane.showMessageDialog(null, "PAN  Number is required!");
             } 
+
+            else if(get_ssN.equals(""))
+            {
+                JOptionPane.showMessageDialog(null, "SSN is required!");
+            } 
+            else if(sGroup.isSelected(null))
+            {
+                JOptionPane.showMessageDialog(null, "Senior Citizen: Missing Info");
+            }
+
+            else if(eGroup.isSelected(null))
+            {
+                JOptionPane.showMessageDialog(null, "Existing Account: Missing info");
+            }
 
             // cretaing an object to send data to the database
             else
