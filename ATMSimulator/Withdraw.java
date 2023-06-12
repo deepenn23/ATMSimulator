@@ -91,9 +91,4 @@ public class Withdraw extends JFrame implements ActionListener{
             e.printStackTrace();
         }   
     }
-    
-
-    public static void main(String[] args) {
-        new Withdraw("").setVisible(true);
-    }
 }

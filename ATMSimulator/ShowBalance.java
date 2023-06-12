@@ -78,8 +78,4 @@ public class ShowBalance extends JFrame implements ActionListener{
             System.out.println(e);
         }
         }
-    public static void main(String[] args) {
-        new ShowBalance("").setVisible(true);
-    }
-
 }
