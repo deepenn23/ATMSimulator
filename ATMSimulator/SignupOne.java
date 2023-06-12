@@ -223,6 +223,36 @@ public class SignupOne extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Name is required!");
             } 
             // main does not have the other input
+            else if (fatherName.equals(""))
+            {
+                JOptionPane.showMessageDialog(null, "Father's name is required!");
+            }else if (DOB.equals(""))
+            {
+                JOptionPane.showMessageDialog(null, "DOB is required!");
+            }
+            else if (genderGroup.isSelected(null))
+            {
+                JOptionPane.showMessageDialog(null, "Select Gender");
+            }
+            else if (email.equals(""))
+            {
+                JOptionPane.showMessageDialog(null, "Enter Email");
+            }
+            else if (martialGroup.isSelected(null)){
+                JOptionPane.showMessageDialog(null, "Martial Status is required!");
+            }
+            else if (address.equals("")){
+                JOptionPane.showMessageDialog(null, "Enter Address!");
+            }
+            else if (city.equals("")){
+                JOptionPane.showMessageDialog(null, "Enter City!");
+            }
+            else if (state.equals("")){
+                JOptionPane.showMessageDialog(null, "Enter State!");
+            }
+            else if (zipcode.equals("")){
+                JOptionPane.showMessageDialog(null, "Enter Zipcode!");
+            }
             else
             {
                 Conn connection = new Conn();
