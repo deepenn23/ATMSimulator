@@ -88,12 +88,6 @@ public class Deposit extends JFrame implements ActionListener{
             e.printStackTrace();
         }   
     }
-    
-
-    public static void main(String[] args) {
-        
-        new Deposit("").setVisible(true);
-    }
 }
 
 
